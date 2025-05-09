@@ -44,7 +44,6 @@ void set_up(int rigel, int pin) {
 void analog_write(int channel, int duty_cycle) {
     int value;
     value = (duty_cycle * ((1 << LEDC_DUTY_RES) - 1)) / 255;
-    printf("%d\n", value);
     esp_err_t err = ledc_set_duty(LEDC_MODE, channel, value);
 
     if (err != ESP_OK) {
